@@ -9,38 +9,37 @@ import (
 
 func main() {
 
+	var operator string
+
+findOperator:
+	fmt.Print("Please choose a operator between +, -, *, / or  % : ")
 	scanner := bufio.NewScanner(os.Stdin)
-	fmt.Print("Entrez un opérateur parmie +, -, *, /, % : ")
 	scanner.Scan()
-	operateur := scanner.Text()
+	operator = scanner.Text()
 
-	if operateur == "+" || operateur == "-" || operateur == "*" || operateur == "/" || operateur == "%" {
+	scanner = bufio.NewScanner(os.Stdin)
 
-		scanner := bufio.NewScanner(os.Stdin)
+	fmt.Print("Enter first number : ")
+	scanner.Scan()
+	number1, _ := strconv.Atoi(scanner.Text())
 
-		fmt.Print("Entrez un premier chiffre : ")
-		scanner.Scan()
-		premier, _ := strconv.Atoi(scanner.Text())
+	fmt.Print("Enter second number : ")
+	scanner.Scan()
+	number2, _ := strconv.Atoi(scanner.Text())
 
-		fmt.Print("Entrez un second chiffre : ")
-		scanner.Scan()
-		second, _ := strconv.Atoi(scanner.Text())
-
-		switch {
-		case operateur == "+":
-			println(premier + second)
-		case operateur == "-":
-			println(premier - second)
-		case operateur == "*":
-			println(premier * second)
-		case operateur == "/":
-			println(premier / second)
-		case operateur == "%":
-			println(premier % second)
-
-		}
-	} else {
-		fmt.Println("Opérateur inexistant. Veuillez relancer avec un opérateur éxistant")
+	switch operator {
+	case "+":
+		println(number1 + number2)
+	case "-":
+		println(number1 - number2)
+	case "*":
+		println(number1 * number2)
+	case "/":
+		println(number1 / number2)
+	case "%":
+		println(number1 % number2)
+	default:
+		fmt.Println("Invalid operator select :", operator, ". Please retry.")
+		goto findOperator
 	}
-
 }
