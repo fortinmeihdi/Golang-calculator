@@ -19,24 +19,56 @@ findOperator:
 
 	scanner = bufio.NewScanner(os.Stdin)
 
-	fmt.Print("Enter first number : ")
-	scanner.Scan()
-	number1, _ := strconv.Atoi(scanner.Text())
-
-	fmt.Print("Enter second number : ")
-	scanner.Scan()
-	number2, _ := strconv.Atoi(scanner.Text())
-
 	switch operator {
 	case "+":
+		fmt.Print("Enter first number : ")
+		scanner.Scan()
+		number1, _ := strconv.Atoi(scanner.Text())
+
+		fmt.Print("Enter second number : ")
+		scanner.Scan()
+		number2, _ := strconv.Atoi(scanner.Text())
+
 		println(number1 + number2)
 	case "-":
+		fmt.Print("Enter first number : ")
+		scanner.Scan()
+		number1, _ := strconv.Atoi(scanner.Text())
+
+		fmt.Print("Enter second number : ")
+		scanner.Scan()
+		number2, _ := strconv.Atoi(scanner.Text())
+
 		println(number1 - number2)
 	case "*":
+		fmt.Print("Enter first number : ")
+		scanner.Scan()
+		number1, _ := strconv.ParseFloat(scanner.Text(), 64)
+
+		fmt.Print("Enter second number : ")
+		scanner.Scan()
+		number2, _ := strconv.ParseFloat(scanner.Text(), 64)
+
 		println(number1 * number2)
 	case "/":
+		fmt.Print("Enter first number : ")
+		scanner.Scan()
+		number1, _ := strconv.ParseFloat(scanner.Text(), 64)
+
+		fmt.Print("Enter second number : ")
+		scanner.Scan()
+		number2, _ := strconv.ParseFloat(scanner.Text(), 64)
+
 		println(number1 / number2)
 	case "%":
+		fmt.Print("Enter first number : ")
+		scanner.Scan()
+		number1, _ := strconv.Atoi(scanner.Text())
+
+		fmt.Print("Enter second number : ")
+		scanner.Scan()
+		number2, _ := strconv.Atoi(scanner.Text())
+
 		println(number1 % number2)
 	default:
 		fmt.Println("Invalid operator select :", operator, ". Please retry.")
