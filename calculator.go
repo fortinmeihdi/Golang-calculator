@@ -23,23 +23,25 @@ findOperator:
 	case "+":
 		fmt.Print("Enter first number : ")
 		scanner.Scan()
-		number1, _ := strconv.Atoi(scanner.Text())
+		number1, _ := strconv.ParseFloat(scanner.Text(), 64)
 
 		fmt.Print("Enter second number : ")
 		scanner.Scan()
-		number2, _ := strconv.Atoi(scanner.Text())
+		number2, _ := strconv.ParseFloat(scanner.Text(), 64)
 
-		println(number1 + number2)
+		result := number1 + number2
+		fmt.Printf("%f\n", result)
 	case "-":
 		fmt.Print("Enter first number : ")
 		scanner.Scan()
-		number1, _ := strconv.Atoi(scanner.Text())
+		number1, _ := strconv.ParseFloat(scanner.Text(), 64)
 
 		fmt.Print("Enter second number : ")
 		scanner.Scan()
-		number2, _ := strconv.Atoi(scanner.Text())
+		number2, _ := strconv.ParseFloat(scanner.Text(), 64)
 
-		println(number1 - number2)
+		result := number1 - number2
+		fmt.Printf("%f\n", result)
 	case "*":
 		fmt.Print("Enter first number : ")
 		scanner.Scan()
@@ -49,7 +51,8 @@ findOperator:
 		scanner.Scan()
 		number2, _ := strconv.ParseFloat(scanner.Text(), 64)
 
-		println(number1 * number2)
+		result := number1 * number2
+		fmt.Printf("%f\n", result)
 	case "/":
 		fmt.Print("Enter first number : ")
 		scanner.Scan()
@@ -59,8 +62,11 @@ findOperator:
 		scanner.Scan()
 		number2, _ := strconv.ParseFloat(scanner.Text(), 64)
 
-		println(number1 / number2)
+		result := number1 / number2
+		fmt.Printf("%f\n", result)
 	case "%":
+		fmt.Print("Reminder : Modulo can only be used with whole number !")
+
 		fmt.Print("Enter first number : ")
 		scanner.Scan()
 		number1, _ := strconv.Atoi(scanner.Text())
